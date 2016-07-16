@@ -10,6 +10,7 @@ func Solution(N int) int {
 
 	for N > 0 {
 		k := N & -N
+
 		right := int(math.Log2(float64(k)))
 
 		if (left != -1) && ((right - left - 1) > len) {
