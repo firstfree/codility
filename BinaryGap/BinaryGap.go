@@ -27,4 +27,5 @@ func Solution(N int) int {
 
 func main() {
 	fmt.Println(Solution(1041))
+	fmt.Println(Solution(1041))
 }
