@@ -10,7 +10,6 @@ func Solution(N int) int {
 
 	for N > 0 {
 		k := N & -N
-
 		endBit := int(math.Log2(float64(k)))
 
 		if (startBit != -1) && ((endBit - startBit - 1) > len) {
@@ -26,6 +25,5 @@ func Solution(N int) int {
 }
 
 func main() {
-	fmt.Println(Solution(1041))
 	fmt.Println(Solution(1041))
 }
