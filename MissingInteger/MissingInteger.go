@@ -4,17 +4,17 @@ import "fmt"
 
 func Solution(A []int) int {
 	len := len(A)
-	count := make([]int, len+1)
+	visited := make([]bool, len)
 
 	for _, v := range A {
-		if (v <= len) && (v > 0) {
-			count[v]++
+		if (v > 0) && (v <= len) {
+			visited[v-1] = true
 		}
 	}
 
-	for i := 1; i < len+1; i++ {
-		if count[i] == 0 {
-			return i
+	for i, v := range visited {
+		if !v {
+			return i + 1
 		}
 	}
 
@@ -22,7 +22,7 @@ func Solution(A []int) int {
 }
 
 func main() {
-	fmt.Println(Solution([]int{1, 2, 3, 4, 5, 6, 12})) // 5
+	fmt.Println(Solution([]int{1, 2, 3, 4, 5, 6, 12})) // 7
 	fmt.Println(Solution([]int{1}))                    // 2
 	fmt.Println(Solution([]int{1, 2, 3, 4, 5}))        // 6
 	fmt.Println(Solution([]int{4, 5, 6, 2}))           // 1
